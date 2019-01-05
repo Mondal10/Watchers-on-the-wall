@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<head>
+<title>Signup</title>
+<link rel="stylesheet" type="text/css" href="../css/chrs.css">
+<SCRIPT type="text/javascript">		
+function validate()
+{
+	var Fname=document.getElementById("Fname");
+	if(Fname.value==null || Fname.value=="")
+	{
+		Fname.focus();
+		alert("Enter valid first name");
+		return false;
+	}
+	var Lname=document.getElementById("Lname");
+	if(Lname.value==null || Lname.value=="")
+	{
+		Lname.focus();
+		alert("Enter valid last name");
+		return false;
+	}
+	if(Fname.value.match(alphaExp)){}
+	else{
+		alert("First name can have only letters");
+		Fname.focus();
+		return false;
+	}
+	if(Lname.value.match(alphaExp)){}
+	else{
+		alert("Last name can have only letters");
+		Lname.focus();
+		return false;
+	}
+	
+	var psd=document.getElementById("psd");
+	var repsd=document.getElementById("repsd");
+	var alphaExp = /^[a-zA-Z]+$/;
+	var rtype = document.getElementsByName("rtype");
+			var istypeSel = false;
+			for(i=0;i<rtype.length;i++)
+			{
+			 istypeSel = rtype[i].checked;
+			 if(rtype[i].checked)
+			 {
+			 break;
+			 }
+			}
+			if(!istypeSel)
+			{
+			   alert("Select type");
+			   return false;
+			}
+
+	var contact=document.getElementById("contact");
+	if(contact.value==null || contact.value==" ")
+	{
+		alert("Please Enter Contact Number");
+		contact.focus();
+		return false;
+	}
+	if (isNaN(contact.value))
+	{
+		alert(" Your Contact Number must be Integers");
+		contact.focus();
+		return false;
+	}
+	if((contact.value.length!= 10))
+	{
+		alert("Enter the valid Contact Number(Example : 9XXXXXXXX9)");
+		contact.focus();
+		return false;
+	}
+	var EmailId=document.getElementById("email");
+	var atpos = EmailId.value.indexOf("@");
+    var dotpos = EmailId.value.lastIndexOf(".");
+	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=EmailId.value.length) 
+	{
+        alert("Enter valid email-ID");
+		EmailId.focus();
+        return false;
+   	}
+	
+	
+	if(psd.value.length< 8 || repsd.value.length< 8)
+	{
+		alert("Please enter a password of atleast 8 characters");
+		psd.focus();
+		return false;
+	}
+	else if (psd.value.length != repsd.value.length) 
+	{
+		alert("Passwords do not match.");
+		psd.focus();
+        return false;
+    }
+	else if (psd.value != repsd.value) 
+	{
+		alert("Passwords do not match.");
+		psd.focus();
+        return false;
+    }
+	
+	
+	if (confirm("Do you want to submit your details?") == true) {} 
+	else 
+	{
+       return false;
+    }
+    var poll=prompt("Please post some suggestions about our website.Help us get better.Your reviews are very useful to us....");
+	return true;
+}
+</SCRIPT>
+</head>
+<body>
+<br><br><br>
+
+<!--content-->
+<marquee><h2> Sign Up and get all notification </h2></marquee>
+<td align="center">
+
+<form name="f1" id="f1" onsubmit="return validate()" method="post" action="Signupnew.php">
+<table border="0" cellpadding=5 font size="5">
+<tr>
+<td>	<font color="white">  First Name:	</font>	</td>
+<TD><INPUT name="Fname" type="TEXT" placeholder="Enter your first name" size="30" maxlength="30" align="center" id="Fname"></TD>
+</tr>
+<tr>
+<td><font color="white">  Last Name:	</font>	</td>
+<td><INPUT type="TEXT" name="Lname" align="center" size="30" maxlength="30" placeholder="Enter your last name" id="Lname"></TD>
+</tr>
+<tr>
+<td>	<font color="white">Gender:	</font>	</td>
+<td>	<input type="radio" name="rtype" id="r1" value="Male">	<font color="white">	Male	</font>	<br>
+<input type="radio" name="rtype" id="r2" value="Female">	<font color="white">	Female	</font>	<br>	</td>
+</tr>
+<tr>
+<td><font color="white">Date of Birth:</font>	</td>
+<td><input type="date" name="signupdttim">	</td>
+</tr>
+
+<TR>
+<TD><font color="white">Contact Number:</FONT></TD>
+<TD><INPUT type="TEXT" name="contact" size="30" maxlength="10" placeholder="XXXXXXXXXX" id="contact"></TD>
+</TR>
+<TR>
+<TD><font color="white">E-Mail ID:</FONT></TD>
+<TD><INPUT name="email" type="TEXT" name="email" id="email" placeholder="mysupermail@mail.com" size="30" maxlength="30"></TD>
+</TR>
+<TR>
+<TD><font color="white">Password:</FONT></TD>
+<TD><INPUT type="PASSWORD" name="psd" size="30"  id="psd" placeholder="eg. X8df!90E0"></TD>
+</TR>
+<TR>
+<TD><font color="white">Confirm Password:</FONT></TD>
+<TD><INPUT type="PASSWORD" name="repsd" size="30" id="repsd" placeholder="eg. X8df!90E0"></TD>
+</TR>
+</TABLE>
+
+<p align="center">
+<INPUT type="checkbox" name="tc" value="tc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Agree to the terms and policies and continue </FONT><br>
+<INPUT TYPE="Submit" value="Submit" id="button" onclick="if(!this.form.tc.checked){alert('You must agree to the terms first.');return false}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset"></p>
+
+</form>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+
