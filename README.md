@@ -1,4 +1,2 @@
 # Watchers-on-the-wall
-Responsive website
-please visit http://wotw.16mb.com/ 
-to view the page
+Responsive website using basic HTML 5 and CSS 3
