@@ -1,0 +1,98 @@
+body{
+	background:#ececec url(../images/bg4.jpg) repeat;
+	font-size:87.5%;
+	font-family: got;
+        src: url(got.ttf);
+	color:#A0A0A0;
+	line-height:1.7em;
+	text-align:left;
+}
+
+@font-face{
+	font-family: got;
+        src: url(got.ttf);
+}
+
+h2{
+	color:white;
+	word-spacing: 5px;
+}
+
+.clr{
+	clear:both;
+}
+
+
+/*Content division*/
+
+#content article{
+	border-radius:5px;
+	overflow:auto;
+	background:#202020;
+	padding:10px 15px;
+	margin-top:50px;
+	margin-left:50px;
+	margin-right:50px;
+	word-spacing: 5px;
+	
+}
+
+#content article span{
+	font-style:italic;
+	color:f2f2f2;
+	word-spacing: 5px;
+}
+
+footer{
+	background:#404040;
+	height:40px;
+	border:white 1px solid;
+	border-radius:5px;
+	margin-top:10px;
+}
+
+footer p{
+	color:#fff;
+	margin:0;
+	padding:10px 0 0 0;
+	text-align:center;
+ 	word-spacing: 5px;
+}
+
+/* Start Media Queries */
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-width : 768px)  and (max-width : 980px) {
+
+	
+	#content{
+		overflow:auto;
+		width:80%;
+		float:none;
+		transition: width 1s; /* animation */
+	}
+
+	
+
+/* Small Tablets (portrait and landscape) ----------- */
+@media only screen and (min-width : 569px) and (max-width : 767px) {
+	
+	
+	#content{
+		overflow:auto;
+		width:80%;
+		float:none;
+	}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 240px) and (max-width : 568px) {
+	
+	
+	#content{
+		overflow:auto;
+		width:80%;
+		float:none;
+	}
+	
